@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Store.DataAccessLayer.Repositories
 {
-    public class ProductsRepository : IRepository<Products>
+    public class ProductsRepository : IRepository<Product>
     {
         private readonly StoreDbContext db;
 
@@ -20,34 +20,34 @@ namespace Store.DataAccessLayer.Repositories
             this.db = context;
         }
 
-        public IEnumerable<Products> GetAll()
+        public IEnumerable<Product> GetAll()
         {
             return db.Product;
         }
 
-        public Products Get(int id)
+        public Product Get(int id)
         {
             return db.Product.Find(id);
         }
 
-        public void Create(Products book)
+        public void Create(Product book)
         {
             db.Product.Add(book);
         }
 
-        public void Update(Products book)
+        public void Update(Product book)
         {
             db.Entry(book).State = EntityState.Modified;
         }
 
-        public IEnumerable<Products> Find(Func<Products, Boolean> predicate)
+        public IEnumerable<Product> Find(Func<Product, Boolean> predicate)
         {
             return db.Product.Where(predicate).ToList();
         }
 
         public void Delete(int id)
         {
-            Products products = db.Product.Find(id);
+            Product products = db.Product.Find(id);
             if (products != null)
                 db.Product.Remove(products);
         }

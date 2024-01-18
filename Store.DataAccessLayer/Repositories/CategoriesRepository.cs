@@ -17,32 +17,32 @@ namespace Store.DataAccessLayer.Repositories
         { 
             this.db = db;
         }
-        public IEnumerable<Categories> GetAll()
+        public IEnumerable<Category> GetAll()
         {
             return db.Category.Include(o => o.Id);
         }
 
-        public Categories Get(int id)
+        public Category Get(int id)
         {
             return db.Category.Find(id);
         }
 
-        public void Create(Categories order)
+        public void Create(Category order)
         {
             db.Category.Add(order);
         }
 
-        public void Update(Categories order)
+        public void Update(Category order)
         {
             db.Entry(order).State = EntityState.Modified;
         }
-        public IEnumerable<Categories> Find(Func<Categories, Boolean> predicate)
+        public IEnumerable<Category> Find(Func<Category, Boolean> predicate)
         {
             return db.Category.Include(o => o.Id).Where(predicate).ToList();
         }
         public void Delete(int id)
         {
-            Categories order = db.Category.Find(id);
+            Category order = db.Category.Find(id);
             if (order != null)
                 db.Category.Remove(order);
         }

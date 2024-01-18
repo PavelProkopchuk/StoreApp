@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Store.DataAccessLayer.Entities
 {
-    public class Products
+    public class Product
     {
         public int Id { get; set; }
-        public string CategoryId { get; set; }
-        public string ProductsName { get; set; }
-        public string ProductType { get; set; }
-        public string ProductDescription { get; set; }
-        public string ProductPrice { get; set; }
-        public ICollection<Categories> Categories { get; set; }
+        public int CategoryId { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public string Description { get; set; }
+        public string Price { get; set; }
+        public ICollection<Category> Categories { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace Store.DataAccessLayer.Repositories
             db = new StoreDbContext(connectionString);
         }
 
-        public IRepository<Products> Product
+        public IRepository<Product> Product
         {
             get
             {
@@ -31,7 +31,7 @@ namespace Store.DataAccessLayer.Repositories
                 return productsRepository;
             }
         }
-        public IRepository<Categories> Category
+        public IRepository<Category> Category
         {
             get
             {
@@ -39,7 +39,7 @@ namespace Store.DataAccessLayer.Repositories
                 {
                     categoriesRepository = new CategoriesRepository(db);
                 }
-                return (IRepository<Categories>)categoriesRepository;
+                return (IRepository<Category>)categoriesRepository;
             }
         }
 
