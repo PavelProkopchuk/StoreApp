@@ -16,15 +16,15 @@ namespace Store.DataAccessLayer.Database
         {
             this.connectionString = connectionString;
         }
-        public DbSet<Products> Product { get; set; }
-        public DbSet<Categories> Category { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<Category> Category { get; set; }
         static StoreDbContext()
         {
             
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Host=localhost;Port=5432;Database=FilmStore;Username=postgres;Password=3698741");
+            // optionsBuilder.UseSqlServer("Host=localhost;Port=5432;Database=FilmStore;Username=postgres;Password=3698741");
         }
     }
 }

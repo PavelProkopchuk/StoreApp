@@ -10,8 +10,8 @@ namespace Store.DataAccessLayer.Intefaces
 {
     public  interface IUnitOfWork
     {
-        IRepository<Products> Product { get; }
-        IRepository<Categories> Category { get; }
+        IRepository<Product> Product { get; }
+        IRepository<Category> Category { get; }
         void Save();
     }
 }
